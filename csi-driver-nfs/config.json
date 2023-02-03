@@ -1,0 +1,35 @@
+{
+	"description": "NFS CSI driver for Docker Swarm",
+	"documentation": "https://github.com/olljanat/csi-plugins-for-docker-swarm",
+	"entrypoint": [
+		"/start.sh"
+	],
+	"env": [],
+	"interface": {
+		"socket": "csi-nfs.sock",
+		"types": [
+			"docker.csicontroller/1.0",
+			"docker.csinode/1.0"
+		]
+	},
+	"linux": {
+		"capabilities": [
+			"CAP_SYS_ADMIN"
+		],
+		"AllowAllDevices": true,
+		"devices": null
+	},
+	"mounts": [
+		{
+			"name":"/etc/hostname",
+			"destination":"/node_hostname",
+			"source":"/etc/hostname",
+			"type":"bind",
+			"options":["bind"]
+		}
+	],
+	"network": {
+		"type": "host"
+	},
+	"propagatedmount": "/var/lib/kubelet/pods"
+}
