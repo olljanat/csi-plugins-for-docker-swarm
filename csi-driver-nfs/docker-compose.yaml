@@ -1,0 +1,34 @@
+version: "3.10"
+
+services:
+  foo:
+    image: ollijanatuinen/debug:latest
+    volumes:
+      - type: cluster
+        source: group:mygroup
+        target: /srv
+
+volumes:
+  cluster-volume:
+    driver: ollijanatuinen/swarm-csi-nfs:v4.1.0-9
+    x-cluster-spec:
+      group: mygroup
+      access_mode:
+        scope: single
+        sharing: none
+        block_volume: {}
+      capacity_range:
+        required_bytes: 1G
+        limit_bytes: 8G
+      secrets:
+      - key: server
+        secret: server
+      - key: share
+        secret: share
+      availability: active
+
+secrets:
+  server:
+    file: ./server
+  share:
+    file: ./share
