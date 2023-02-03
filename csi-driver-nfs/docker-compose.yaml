@@ -10,7 +10,7 @@ services:
 
 volumes:
   cluster-volume:
-    driver: ollijanatuinen/swarm-csi-nfs:v4.1.0-9
+    driver: csi-nfs
     x-cluster-spec:
       group: mygroup
       access_mode:

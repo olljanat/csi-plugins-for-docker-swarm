@@ -24,4 +24,4 @@ docker plugin create ollijanatuinen/swarm-csi-nfs:v$VERSION .
 docker plugin enable ollijanatuinen/swarm-csi-nfs:v$VERSION 
 docker plugin push ollijanatuinen/swarm-csi-nfs:v$VERSION
 docker plugin rm ollijanatuinen/swarm-csi-nfs:v$VERSION
-docker plugin install --alias csi-nfs --grant-all-permissions ollijanatuinen/swarm-csi-nfs:v$VERSION NODE_ID=$HOSTNAME
+docker plugin install --alias csi-nfs --grant-all-permissions ollijanatuinen/swarm-csi-nfs:v$VERSION
