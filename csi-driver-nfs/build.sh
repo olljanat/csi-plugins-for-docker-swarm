@@ -1,27 +1,30 @@
 #!/bin/bash
 
-USAGE="Usage: ./build.sh VERSION"
+USAGE="Usage: ./build.sh <Docker Hub Organization> <NFS CSI version>"
 
-if [ "$1" == "--help" ] || [ "$#" -lt "1" ]; then
+if [ "$1" == "--help" ] || [ "$#" -lt "2" ]; then
 	echo $USAGE
 	exit 0
 fi
 
-VERSION=$1
+ORG=$1
+VERSION=$2
 
 rm -rf build
 docker plugin disable csi-nfs:latest
 docker plugin rm csi-nfs:latest
+docker plugin disable $ORG/swarm-csi-nfs:v$VERSION
+docker plugin rm $ORG/swarm-csi-nfs:v$VERSION
+docker rm -vf rootfsimage
 
-ID=$(docker create --name rootfsimage registry.k8s.io/sig-storage/nfsplugin:v$VERSION)
+docker create --name rootfsimage registry.k8s.io/sig-storage/nfsplugin:v$VERSION
 mkdir -p rootfs
-cp start.sh rootfs/
-docker export "$ID" | tar -x -C rootfs
-docker rm -vf "$ID"
-docker rmi registry.k8s.io/sig-storage/nfsplugin:v$VERSION
+docker export rootfsimage | tar -x -C rootfs
+docker rm -vf rootfsimage
+cp entrypoint.sh rootfs/
 
-docker plugin create ollijanatuinen/swarm-csi-nfs:v$VERSION .
-docker plugin enable ollijanatuinen/swarm-csi-nfs:v$VERSION 
-docker plugin push ollijanatuinen/swarm-csi-nfs:v$VERSION
-docker plugin rm ollijanatuinen/swarm-csi-nfs:v$VERSION
-docker plugin install --alias csi-nfs --grant-all-permissions ollijanatuinen/swarm-csi-nfs:v$VERSION
+docker plugin create $ORG/swarm-csi-nfs:v$VERSION .
+docker plugin enable $ORG/swarm-csi-nfs:v$VERSION
+docker plugin push $ORG/swarm-csi-nfs:v$VERSION
+docker plugin rm $ORG/swarm-csi-nfs:v$VERSION
+docker plugin install --alias csi-nfs --grant-all-permissions $ORG/swarm-csi-nfs:v$VERSION
