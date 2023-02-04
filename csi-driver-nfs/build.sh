@@ -26,5 +26,6 @@ cp entrypoint.sh rootfs/
 docker plugin create $ORG/swarm-csi-nfs:v$VERSION .
 docker plugin enable $ORG/swarm-csi-nfs:v$VERSION
 docker plugin push $ORG/swarm-csi-nfs:v$VERSION
+docker plugin disable $ORG/swarm-csi-nfs:v$VERSION
 docker plugin rm $ORG/swarm-csi-nfs:v$VERSION
 docker plugin install --alias csi-nfs --grant-all-permissions $ORG/swarm-csi-nfs:v$VERSION

@@ -28,5 +28,6 @@ cp local-hostpath.yaml rootfs/home/csi/app/config/
 docker plugin create $ORG/swarm-csi-local-path:v$VERSION .
 docker plugin enable $ORG/swarm-csi-local-path:v$VERSION
 docker plugin push $ORG/swarm-csi-local-path:v$VERSION
+docker plugin disable $ORG/swarm-csi-local-path:v$VERSION
 docker plugin rm $ORG/swarm-csi-local-path:v$VERSION
 docker plugin install --alias csi-local-path --grant-all-permissions $ORG/swarm-csi-local-path:v$VERSION
