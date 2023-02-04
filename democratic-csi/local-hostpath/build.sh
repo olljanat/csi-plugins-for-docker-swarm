@@ -10,7 +10,7 @@ fi
 ORG=$1
 VERSION=$2
 
-rm -rf build
+rm -rf rootfs
 docker plugin disable csi-local-path:latest
 docker plugin rm csi-local-path:latest
 docker plugin disable $ORG/swarm-csi-local-path:v$VERSION

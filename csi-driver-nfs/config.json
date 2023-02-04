@@ -2,7 +2,7 @@
 	"description": "NFS CSI driver for Docker Swarm",
 	"documentation": "https://github.com/olljanat/csi-plugins-for-docker-swarm",
 	"entrypoint": [
-		"/start.sh"
+		"/entrypoint.sh"
 	],
 	"env": [],
 	"interface": {
