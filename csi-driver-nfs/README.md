@@ -19,7 +19,26 @@ docker plugin install \
   <Docker Hub Organization>/swarm-csi-nfs:v<NFS CSI version>
 ```
 
+
 # Usage
 ```bash
-docker stack deploy -c docker-compose.yaml test
+docker volume create \
+  --driver csi-nfs \
+  --availability active \
+  --scope single \
+  --sharing none \
+  --type mount \
+  --opt server="172.18.0.1" \
+  --opt share="/mnt/nfs_share" \
+  my-csi-nfs-volume
+
+docker volume ls --cluster
+
+docker service create \
+  --name my-service \
+  --mount type=cluster,src=my-csi-local-volume,dst=/usr/share/nginx/html \
+  --publish 8080:80 \
+  nginx
+
+curl http://localhost:8080
 ```
