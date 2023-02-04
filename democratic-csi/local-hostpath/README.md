@@ -1,6 +1,5 @@
-# Democratic CSI for Docker Swarm
-[democratic-csi](https://github.com/democratic-csi/democratic-csi)
-
+# local-hostpath driver
+[Democratic CSI](https://github.com/democratic-csi/democratic-csi) with [local-hostpath driver configuration](https://github.com/democratic-csi/democratic-csi/blob/v1.7.7/examples/local-hostpath.yaml) for Docker Swarm.
 
 # Build
 ```bash
