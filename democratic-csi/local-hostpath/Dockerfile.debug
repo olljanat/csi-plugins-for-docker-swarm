@@ -1,0 +1,6 @@
+ARG VERSION
+FROM docker.io/democraticcsi/democratic-csi:v$VERSION
+COPY entrypoint.sh /home/csi/app/
+COPY local-hostpath.yaml /home/csi/app/config/
+WORKDIR /home/csi/app
+ENTRYPOINT [ "/home/csi/app/entrypoint.sh" ]
