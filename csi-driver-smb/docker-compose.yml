@@ -1,0 +1,20 @@
+version: "3.10"
+
+services:
+  nginx:
+    image: nginx
+    ports:
+      - 8080:80
+    volumes:
+      - type: volume
+        source: my-csi-smb-volume
+        target: /usr/share/nginx/html
+    networks:
+    - nginx
+
+volumes:
+  my-csi-smb-volume:
+    external: true
+
+networks:
+  nginx:

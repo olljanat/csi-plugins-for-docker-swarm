@@ -22,7 +22,6 @@ mkdir -p rootfs
 docker export rootfsimage | tar -x -C rootfs
 docker rm -vf rootfsimage
 cp entrypoint.sh rootfs/
-mkdir -p rootfs/var/lib/kubelet/pods
 
 docker plugin create $ORG/swarm-csi-nfs:v$VERSION .
 docker plugin enable $ORG/swarm-csi-nfs:v$VERSION
