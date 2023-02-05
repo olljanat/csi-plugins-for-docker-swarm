@@ -33,4 +33,4 @@ These CSI plugins are known to use Kubernetes specific implementation which why 
 
 | Plugin                              | Problem description                                                                                | Related issue |
 | ----------------------------------- | -------------------------------------------------------------------------------------------------- | ------------- |
-| [Longhorn](https://longhorn.io)     | Works are Kubernetes [controller](https://kubernetes.io/docs/concepts/architecture/controller/)    | [longhorn/longhorn#23](https://github.com/longhorn/longhorn/issues/23) |
+| [Longhorn](https://longhorn.io)     | Works as [Kubernetes controller](https://kubernetes.io/docs/concepts/architecture/controller/)     | [longhorn/longhorn#23](https://github.com/longhorn/longhorn/issues/23) |
