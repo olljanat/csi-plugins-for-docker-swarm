@@ -24,6 +24,7 @@ docker plugin install \
 
 # Usage
 ```bash
+# Create volume
 docker volume create \
   --driver csi-local-path \
   --availability active \
@@ -32,13 +33,16 @@ docker volume create \
   --type mount \
   my-csi-local-volume
 
+# Verify that volume state is "created"
 docker volume ls --cluster
 
+# Create service
 docker service create \
   --name my-service \
   --mount type=cluster,src=my-csi-local-volume,dst=/usr/share/nginx/html \
   --publish 8080:80 \
   nginx
 
+# Verity that we see Hello World" message coming from nginx
 curl http://localhost:8080
 ```

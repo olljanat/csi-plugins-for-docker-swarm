@@ -21,6 +21,7 @@ docker plugin install \
 
 # Usage
 ```bash
+# Create volume
 docker volume create \
   --driver csi-nfs \
   --availability active \
@@ -31,14 +32,20 @@ docker volume create \
   --opt share="/mnt/nfs_share" \
   my-csi-nfs-volume
 
+# Verify that volume state is "created"
 docker volume ls --cluster
 
+# Create service
 docker service create \
   --name my-service \
   --mount type=cluster,src=my-csi-nfs-volume,dst=/usr/share/nginx/html \
   --publish 8080:80 \
   nginx
 
+# Or alternatively deploy stack
+docker stack deploy -c docker-compose.yml web
+
+# Add example file to NFS share and check that you see that on curl result
 echo "<html><h1>Hello World</h1></html>" | sudo tee /mnt/nfs_share/my-csi-nfs-volume/index.html
 curl http://localhost:8080
 ```
