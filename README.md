@@ -14,3 +14,9 @@ On Docker 23.0.0 there looks to be at least following issues when working on wit
 | CSI plugins without stagging support does not work properly                                                       |                     | [moby/swarmkit#3116](https://github.com/moby/swarmkit/pull/3116) |
 | Cluster volume reference on stack file does not trigger volume creation                                           |                     |              |
 
+# Non-compatible CSI plugins
+These CSI plugins are known to use Kubernetes specific implementation which why it is not possible to make them working with Docker Swarm without big changes to their implementation.
+
+| Plugin                              | Problem description                                                                                | Related issue |
+| ----------------------------------- | -------------------------------------------------------------------------------------------------- | ------------- |
+| [Longhorn](https://longhorn.io)     | Works are Kubernetes [controller](https://kubernetes.io/docs/concepts/architecture/controller/)    | [longhorn/longhorn#23](https://github.com/longhorn/longhorn/issues/23) |
