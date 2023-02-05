@@ -42,9 +42,6 @@ docker service create \
   --publish 8080:80 \
   nginx
 
-# Or alternatively deploy stack
-docker stack deploy -c docker-compose.yml web
-
 # Add example file to NFS share and check that you see that on curl result
 echo "<html><h1>Hello World</h1></html>" | sudo tee /mnt/nfs_share/my-csi-nfs-volume/index.html
 curl http://localhost:8080

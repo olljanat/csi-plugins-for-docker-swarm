@@ -44,11 +44,7 @@ docker service create \
   --publish 8080:80 \
   nginx
 
-# Or alternatively deploy stack
-docker stack deploy -c docker-compose.yml web
-
 # Add example file to SMB share and check that you see that on curl result
 echo "<html><h1>Hello World</h1></html>" | sudo tee /home/smb-user/smb_share/my-csi-smb-volume/index.html
-echo "<html><h1>Hello World</h1></html>" | sudo tee /var/lib/docker/volumes/my-csi-smb-volume/_data/index.html
 curl http://localhost:8080
 ```
