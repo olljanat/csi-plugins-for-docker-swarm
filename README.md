@@ -21,6 +21,7 @@ These are known feature requests to add Docker Swarm support to existing CSI plu
 | ----------------------------------- | ------------------------------------------------------------------------------------------------------------ |
 | DigitalOcean CSI                    | [digitalocean/csi-digitalocean#57](https://github.com/digitalocean/csi-digitalocean/issues/57)               |
 | Hetzner Cloud CSI                   | [hetznercloud/csi-driver#374](https://github.com/hetznercloud/csi-driver/issues/374)                         |
+| NFS CSI                             | [kubernetes-csi/csi-driver-nfs#/40](https://github.com/kubernetes-csi/csi-driver-nfs/issues/408)             |
 | Nutanix CSI                         | [nutanix/helm#/92](https://github.com/nutanix/helm/issues/92)                                                |
 | SeaweedFS CSI                       | [seaweedfs/seaweedfs-csi-driver#98](https://github.com/seaweedfs/seaweedfs-csi-driver/issues/98)             |
 | Synology CSI                        | [SynologyOpenSource/synology-csi#28](https://github.com/SynologyOpenSource/synology-csi/issues/28)           |
