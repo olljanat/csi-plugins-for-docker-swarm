@@ -1,12 +1,7 @@
 # NFS CSI driver for Docker Swarm
 [NFS CSI driver](https://github.com/kubernetes-csi/csi-driver-nfs) for Docker Swarm.
 
-**NOTE!!!** This is very early draft which passes build but we have not yet figured out how to get mounting working. Volume already gets created to NFS share but mounting it to container fails and Docker engine log says:
-```
-INFO[2023-02-04T19:21:08.939610819+01:00] attempting to publish volume                  attempt=1 module=node/agent/csi volume.id=0f9wq7wvz41wxw81u4gfsiy55
-DEBU[2023-02-04T19:21:08.939765667+01:00] staging volume succeeded, attempting to publish volume  attempt=1 module=node/agent/csi volume.id=0f9wq7wvz41wxw81u4gfsiy55
-INFO[2023-02-04T19:21:08.939788029+01:00] publishing volume failed                      attempt=1 error="rpc error: code = FailedPrecondition desc = volume not staged" module=node/agent/csi volume.id=0f9wq7wvz41wxw81u4gfsiy55
-```
+**NOTE!!!** This CSI plugin does **not** work on Docker 23.0.0 because of bug fix https://github.com/moby/swarmkit/pull/3116 is needed.
 
 
 # Build
@@ -23,7 +18,6 @@ docker plugin install \
   --grant-all-permissions \
   <Docker Hub Organization>/swarm-csi-nfs:v<NFS CSI version>
 ```
-
 
 # Usage
 ```bash
@@ -45,5 +39,6 @@ docker service create \
   --publish 8080:80 \
   nginx
 
+echo "<html><h1>Hello World</h1></html>" | sudo tee /mnt/nfs_share/my-csi-nfs-volume/index.html
 curl http://localhost:8080
 ```

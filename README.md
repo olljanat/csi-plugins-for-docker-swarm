@@ -11,4 +11,5 @@ On Docker 23.0.0 there looks to be at least following issues when working on wit
 | ----------------------------------------------------------------------------------------------------------------- | ------------------- | ------------ |
 | docker plugin create does not support flag `--alias`                                                              |                     |              |
 | docker volume create flag --secret does not work with syntax `<key>:<secret name>`, only with `<key>:<secret id>` |                     |              |
+| CSI plugins without stagging support does not work properly                                                       |                     | [moby/swarmkit#3116](https://github.com/moby/swarmkit/pull/3116) |
 
