@@ -1,5 +1,5 @@
 # CSI plugins for Docker Swarm
-This is my playground repository with CSI plugin which I trying to make working with Docker Swarm.
+This is my playground repository with CSI plugins which I trying to make working with Docker Swarm. Contributions to improve documentation and add more examples are very welcome.
 
 It is recommended to read [official documentation](https://github.com/moby/moby/blob/master/docs/cluster_volumes.md) first before playing with these.
 
