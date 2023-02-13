@@ -14,6 +14,8 @@ On Docker 23.0.0 there looks to be at least following issues when working on wit
 | docker volume create flag --secret does not work with syntax `<key>:<secret name>`, only with `<key>:<secret id>` |                     |              |
 | CSI plugins without stagging support does not work properly                                                       |                     | [moby/swarmkit#3116](https://github.com/moby/swarmkit/pull/3116) |
 | Cluster volume reference on stack file does not trigger volume creation                                           |                     |              |
+| Docker Swarm does not support resizing CSI volumes                                                                | [moby/moby#44985](https://github.com/moby/moby/issues/44985) |
+| Docker Swarm does not work properly with CSI drivers that do not support nodepublish                               |                    | [moby/swarmkit/3116](https://github.com/moby/swarmkit/pull/3116) |
 
 # Feature requests for Docker Swarm support on existing CSI plugin projects
 These are known feature requests to add Docker Swarm support to existing CSI plugins:
