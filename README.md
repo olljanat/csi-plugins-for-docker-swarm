@@ -24,13 +24,13 @@ These are known feature requests to add Docker Swarm support to existing CSI plu
 | ----------------------------------- | ------------------------------------------------------------------------------------------------------------ |
 | DigitalOcean CSI                    | [digitalocean/csi-digitalocean#57](https://github.com/digitalocean/csi-digitalocean/issues/57)               |
 | Hetzner Cloud CSI                   | [hetznercloud/csi-driver#374](https://github.com/hetznercloud/csi-driver/issues/374)                         |
+| NetApp Trident CSI                  | [NetApp/trident#804](https://github.com/NetApp/trident/issues/804)                                           |
 | NFS CSI                             | [kubernetes-csi/csi-driver-nfs#/40](https://github.com/kubernetes-csi/csi-driver-nfs/issues/408)             |
 | Nutanix CSI                         | [nutanix/helm#/92](https://github.com/nutanix/helm/issues/92)                                                |
 | SeaweedFS CSI                       | [seaweedfs/seaweedfs-csi-driver#98](https://github.com/seaweedfs/seaweedfs-csi-driver/issues/98)             |
 | SMB CSI                             | [kubernetes-csi/csi-driver-smb#576](https://github.com/kubernetes-csi/csi-driver-smb/issues/576)             |
 | Synology CSI                        | [SynologyOpenSource/synology-csi#28](https://github.com/SynologyOpenSource/synology-csi/issues/28)           |
 | VMware vSphere CSI                  | [kubernetes-sigs/vsphere-csi-driver#2191](https://github.com/kubernetes-sigs/vsphere-csi-driver/issues/2191) |
-
 
 # Non-compatible CSI plugins
 These CSI plugins are known to use Kubernetes specific implementation which why it is not possible to make them working with Docker Swarm without big changes to their implementation.
