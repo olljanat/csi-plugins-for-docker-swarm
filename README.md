@@ -17,6 +17,7 @@ On Docker 23.0.0 there looks to be at least following issues when working on wit
 | Docker Swarm does not support resizing CSI volumes                                                                | [moby/moby#44985](https://github.com/moby/moby/issues/44985) |
 | Docker Swarm does not work properly with CSI drivers that do not support staging                              |                    | [moby/swarmkit/3116](https://github.com/moby/swarmkit/pull/3116) |
 | Docker Swarm does not support VOLUME_MOUNT_GROUP                                                                  | [moby/moby#44988](https://github.com/moby/moby/issues/44988)                 |               |
+| One bad CSI volume can stop the all volumes from being scheduled                                                                                                               | [#moby/swarmkit/issues/3120](https://github.com/moby/swarmkit/issues/3120) |                |
 
 # Feature requests for Docker Swarm support on existing CSI plugin projects
 These are known feature requests to add Docker Swarm support to existing CSI plugins:
