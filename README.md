@@ -30,7 +30,7 @@ These are known feature requests to add Docker Swarm support to existing CSI plu
 | SMB CSI                             | [kubernetes-csi/csi-driver-smb#576](https://github.com/kubernetes-csi/csi-driver-smb/issues/576)             |
 | Synology CSI                        | [SynologyOpenSource/synology-csi#28](https://github.com/SynologyOpenSource/synology-csi/issues/28)           |
 | VMware vSphere CSI                  | [kubernetes-sigs/vsphere-csi-driver#2191](https://github.com/kubernetes-sigs/vsphere-csi-driver/issues/2191) |
-
+| NetApp Trident CSI                  | [NetApp/trident#804](https://github.com/NetApp/trident/issues/804)                                           |
 
 # Non-compatible CSI plugins
 These CSI plugins are known to use Kubernetes specific implementation which why it is not possible to make them working with Docker Swarm without big changes to their implementation.
