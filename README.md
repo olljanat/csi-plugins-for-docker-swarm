@@ -23,6 +23,7 @@ On Docker 23.0.0 there looks to be at least following issues when working on wit
 These are known feature requests to add Docker Swarm support to existing CSI plugins:
 | Plugin                              | Feature request                                                                                              |
 | ----------------------------------- | ------------------------------------------------------------------------------------------------------------ |
+| Amazon EBS CSI                      | [kubernetes-sigs/aws-ebs-csi-driver#1513](https://github.com/kubernetes-sigs/aws-ebs-csi-driver/issues/1513) |
 | DigitalOcean CSI                    | [digitalocean/csi-digitalocean#57](https://github.com/digitalocean/csi-digitalocean/issues/57)               |
 | Hetzner Cloud CSI                   | [hetznercloud/csi-driver#374](https://github.com/hetznercloud/csi-driver/issues/374)                         |
 | Kadalu                              | [kadalu/kadalu#963](https://github.com/kadalu/kadalu/issues/963)                                             |
