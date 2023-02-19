@@ -29,7 +29,9 @@
         ],
         "available": true
       },
-      "droplet_ids": [],
+      "droplet_ids": [
+        2756294
+      ],
       "name": "my-csi-digitalocean-volume",
       "description": "Block store for examples",
       "size_gigabytes": 10,

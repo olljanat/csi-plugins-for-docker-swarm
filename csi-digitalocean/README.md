@@ -1,6 +1,8 @@
 # DigitalOcean CSI driver for Docker Swarm
 [DigitalOcean CSI driver](https://github.com/digitalocean/csi-digitalocean) for Docker Swarm.
 
+**NOTE!!!** This CSI plugin does **not** work on Docker 23.0.0 because of bug fix https://github.com/moby/swarmkit/pull/3123 is needed.
+
 # Build
 ```bash
 ./build.sh <Docker Hub Organization> <DigitalOcean CSI version> <DigitalOcean API URL> <DigitalOcean API Token>
@@ -21,6 +23,8 @@ docker logs -f digitalocean
 }
 ```
 and change it back to current content after you run `docker volume create ...` command. That way you get volume "created" state.
+
+**NOTE!** After `docker volume create` you need rename `volumes` in fake-data/v2 to some other name and folder `volumes.2` to `volumes` because we use just standard nginx here to provide those JSON files.
 
 # Deployment to other nodes
 ```bash
@@ -49,6 +53,7 @@ docker volume ls --cluster
 
 # Create service
 docker service create \
+  --detach \
   --name my-service \
   --mount type=cluster,src=my-csi-digitalocean-volume,dst=/usr/share/nginx/html \
   --publish 8080:80 \
