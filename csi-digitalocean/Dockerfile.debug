@@ -1,0 +1,5 @@
+ARG VERSION
+FROM docker.io/digitalocean/do-csi-plugin:v$VERSION
+COPY entrypoint.sh /
+WORKDIR /
+ENTRYPOINT [ "/entrypoint.sh" ]
