@@ -24,6 +24,7 @@ These are known feature requests to add Docker Swarm support to existing CSI plu
 | Plugin                              | Feature request                                                                                              | Status |
 | ----------------------------------- | ------------------------------------------------------------------------------------------------------------ | ------ |
 | Amazon EBS CSI                      | [kubernetes-sigs/aws-ebs-csi-driver#1513](https://github.com/kubernetes-sigs/aws-ebs-csi-driver/issues/1513) |        |
+| Ceph CSI                            | [ceph-csi/issues#3769](https://github.com/ceph/ceph-csi/issues/3769)                                         |        |
 | DigitalOcean CSI                    | [digitalocean/csi-digitalocean#57](https://github.com/digitalocean/csi-digitalocean/issues/57)               |        |
 | Hetzner Cloud CSI                   | [hetznercloud/csi-driver#374](https://github.com/hetznercloud/csi-driver/issues/374)                         |  beta  |
 | Kadalu                              | [kadalu/kadalu#963](https://github.com/kadalu/kadalu/issues/963)                                             |        |
