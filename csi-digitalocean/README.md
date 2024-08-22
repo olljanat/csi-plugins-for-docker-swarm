@@ -1,8 +1,6 @@
 # DigitalOcean CSI driver for Docker Swarm
 [DigitalOcean CSI driver](https://github.com/digitalocean/csi-digitalocean) for Docker Swarm.
 
-**NOTE!!!** This CSI plugin does **not** work on Docker 23.0.0 because of bug fix https://github.com/moby/swarmkit/pull/3123 is needed.
-
 # Build
 ```bash
 ./build.sh <Docker Hub Organization> <DigitalOcean CSI version> <DigitalOcean API URL> <DigitalOcean API Token>
