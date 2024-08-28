@@ -4,7 +4,12 @@
 	"entrypoint": [
 		"/entrypoint.sh"
 	],
-	"env": [],
+	"env": [
+		{
+                        "name": "CSI_ENDPOINT",
+                        "value": "unix:///run/docker/plugins/csi-smb.sock"
+                }
+	],
 	"interface": {
 		"socket": "csi-smb.sock",
 		"types": [
