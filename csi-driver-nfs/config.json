@@ -4,7 +4,12 @@
 	"entrypoint": [
 		"/entrypoint.sh"
 	],
-	"env": [],
+	"env": [
+		{
+                        "name": "CSI_ENDPOINT",
+                        "value": "unix:///run/docker/plugins/csi-nfs.sock"
+                }
+	],
 	"interface": {
 		"socket": "csi-nfs.sock",
 		"types": [
