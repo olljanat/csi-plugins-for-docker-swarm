@@ -1,0 +1,4 @@
+ARG VERSION
+FROM public.ecr.aws/ebs-csi-driver/aws-ebs-csi-driver:v$VERSION
+WORKDIR /
+ENTRYPOINT [ "/usr/bin/aws-ebs-csi-driver", "-v=5", "--endpoint", "unix:///run/docker/plugins/csi-aws-ebs.sock" ]
