@@ -1,0 +1,34 @@
+{
+    "description": "Azure Key Vault CSI driver for Docker Swarm",
+    "documentation": "https://github.com/olljanat/csi-plugins-for-docker-swarm",
+    "entrypoint": [
+        "/bin/secrets-store-csi-driver-provider-azure",
+        "--v=5",
+        "--construct-pem-chain=true",
+        "--endpoint=unix:///run/docker/plugins/csi-azsecret.sock"
+    ],
+    "env": [
+        {
+            "name": "CSI_ENDPOINT",
+            "value": "unix:///run/docker/plugins/csi-azsecret.sock"
+        }
+    ],
+    "interface": {
+        "socket": "csi-azsecret.sock",
+        "types": [
+            "docker.csicontroller/1.0",
+            "docker.csinode/1.0"
+        ]
+    },
+    "linux": {
+        "capabilities": [
+            "CAP_DAC_READ_SEARCH",
+            "CAP_SYS_ADMIN"
+        ]
+    },
+    "mounts": [],
+    "network": {
+        "type": "host"
+    },
+    "propagatedmount": "/data/published"
+}
