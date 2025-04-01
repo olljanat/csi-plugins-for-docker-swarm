@@ -1,0 +1,36 @@
+{
+	"description": "Azure File CSI driver for Docker Swarm",
+	"documentation": "https://github.com/olljanat/csi-plugins-for-docker-swarm",
+	"entrypoint": [
+	"/azurefileplugin",
+    "-v=5",
+    "--endpoint",
+    "unix:///run/docker/plugins/csi-driver-azure-file.sock"
+	],
+	"env": [],
+	"interface": {
+		"socket": "csi-driver-azure-file.sock",
+		"types": [
+			"docker.csicontroller/1.0",
+			"docker.csinode/1.0"
+		]
+	},
+	"linux": {
+		"capabilities": [
+			"CAP_SYS_ADMIN"
+		],
+    "allowAllDevices": true
+	},
+	"mounts": [
+		{
+			"destination":"/dev",
+			"source":"/dev",
+			"type":"bind",
+			"options":["rbind"]
+		}
+	],
+	"network": {
+		"type": "host"
+	},
+	"propagatedmount": "/data/published"
+}

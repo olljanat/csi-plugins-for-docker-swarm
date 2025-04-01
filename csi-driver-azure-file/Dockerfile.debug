@@ -1,0 +1,4 @@
+ARG VERSION
+FROM mcr.microsoft.com/oss/kubernetes-csi/azurefile-csi:v$VERSION
+WORKDIR /
+ENTRYPOINT [ "/azurefileplugin", "-v=5", "--endpoint", "unix:///run/docker/plugins/csi-driver-azure-file.sock" ]
